@@ -1,0 +1,208 @@
+*{
+            margin:0px;
+            padding:0px;
+        }
+        #container{
+            width:100%;
+            height:auto;
+        }
+      
+        body{
+            background-image: url('backgroundimage.png');
+            background-size:cover;
+            background-attachment:fixed;
+
+        }
+        #main{
+         width:100%;
+         height:50px;
+         position:fixed;
+         background-color: rgba(0,0,0,0.85);
+         z-index:10;
+         
+         
+        }
+        #main .c1{
+            width:30%;
+            height:50px;
+            float:left;
+            line-height: 50px;
+           
+
+        }
+        h1{
+            text-align: center;
+            font-size:40px;
+            padding-left: 6px;
+            font-family: "Pliant", sans-serif;
+        }
+        P{
+            COLOR:white;
+            text-align: center;
+            line-height:8px;
+            font-size:10px;
+            margin:auto;
+
+        }
+        #main .c2{
+            width:50%;
+            height:50px;
+            float:left;
+            
+        }
+        .c2 ul li{
+            float:left;
+            margin:0px 20px;
+            line-height:50px;
+            font-size: 18px;
+            font-family: "Pliant", sans-serif;
+            padding:auto;
+            color:whitesmoke;
+            list-style: none;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+
+        }
+        .c2 ul li:hover a{
+            text-decoration:none;
+            border-bottom: 3px solid whitesmoke;
+          
+         
+        }
+        .c2 ul li:hover{
+
+           background-color:#990000;
+        }
+        
+        #main .c3{
+            width:20%;
+            height:50px;
+            float:left;
+            position:absolute;
+            top:10px;
+            right:0px;
+            
+        }
+        .c3 button{
+            background-color: black;
+            line-height:50px;
+            text-align:center;
+            margin-top: auto;
+            padding:1px 2px;
+            font-family: "Pliant", sans-serif;
+            font-size: 15px;
+            color:red;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid #990000;
+            position: absolute;
+            top:3px;
+            right:100px;
+        }
+        #hero{
+           width:50%;
+           height:200px;
+           position: absolute;
+           top:20%;
+           left:3%;
+           line-height: 50px;
+           color:whitesmoke;
+           padding:auto;
+           text-align:center;
+           
+
+        }
+        #hero h1{
+            font-size:60px;
+            text-align: center;
+            padding-top:10px;
+        }
+        #menu{
+           width:40%;
+           height:50px;
+           position: absolute;
+           top:45%;
+           left:8%;
+           color:whitesmoke;
+          
+        }
+        p{
+            font-size:15px;
+            padding-top:10px;
+            line-height:15px;
+            text-transform: capitalize;
+
+        }
+        #join{
+            width:150px;
+            height: 40px;
+            position: absolute;
+            top:65%;
+            left:8%;
+            background-color: #990000;
+            border:2px solid lightgrey;
+            border-radius: 6px 6px 6px 6px;
+
+        }
+        #join h1{
+            font-size:11px;
+            text-align: center;
+            line-height: 40px;
+            color:white;
+        }
+        #train{
+            width:159px;
+            height: 40px;
+            position: absolute;
+            top:65%;
+            left:19%;
+            border:2px solid lightgrey;
+            background-color:black;
+            border-radius: 6px 6px 6px 6px;
+
+        }
+        #train h1{
+            font-size:11px;
+            text-align: center;
+            line-height: 40px;
+            color:white;
+        }
+        #low{
+            width:44%;
+            height:80px;
+            position:absolute;
+            top:75%;
+            left:4%;
+            background-color: rgba(0, 0, 0, 0.7);
+
+        }
+        #low ul {
+            list-style: none;
+            float :left;
+        }
+        #low ul li{
+            float:left;
+            line-height:15px;
+            padding:25px 40px;
+            font-size: 16px;
+            border-right:2px solid lightgrey;
+            border-left:2px solid lightgrey;
+        }
+        #nav{
+            width:100%;
+            height:40px;
+            position: absolute;
+            bottom:0%;
+           
+        }
+        #nav h2{
+            font-size:10px;
+            line-height: 26px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            padding-top:12px;
+            color:white;
+        }

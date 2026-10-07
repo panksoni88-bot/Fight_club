@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fighters</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #container{
+            width:100%;
+            height:auto;
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background-image: url('backgroundfighter.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-color:#000000;
+        }
+
+         #main{
+         width:100%;
+         height:50px;
+         position:fixed;
+         background-color: rgba(0,0,0,0.85);
+         z-index:10;
+         
+         
+        }
+        #main .c1{
+            width:30%;
+            height:50px;
+            float:left;
+            line-height: 50px;
+           
+
+        }
+        h1{
+            text-align: center;
+            font-size:40px;
+            padding-left: 6px;
+            font-family: "Pliant", sans-serif;
+        }
+        P{
+            COLOR:white;
+            text-align: center;
+            line-height:8px;
+            font-size:10px;
+            margin:auto;
+
+        }
+        #main .c2{
+            width:50%;
+            height:50px;
+            float:left;
+            
+        }
+        .c2 ul li{
+            float:left;
+            margin:0px 20px;
+            line-height:50px;
+            font-size: 18px;
+            font-family: "Pliant", sans-serif;
+            padding:auto;
+            color:whitesmoke;
+            list-style: none;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+
+        }
+        .c2 ul li:hover a{
+            text-decoration:none;
+            border-bottom: 3px solid whitesmoke;
+          
+         
+        }
+        .c2 ul li:hover{
+
+           background-color:#990000;
+        }
+        
+        #main .c3{
+            width:20%;
+            height:50px;
+            float:left;
+            position:absolute;
+            top:10px;
+            right:0px;
+            
+        }
+        .c3 button{
+            background-color: black;
+            line-height:50px;
+            text-align:center;
+            margin-top: auto;
+            padding:1px 2px;
+            font-family: "Pliant", sans-serif;
+            font-size: 15px;
+            color:red;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid #990000;
+            position: absolute;
+            top:3px;
+            right:100px;
+        }
+        #head{
+            width: 40%;
+            height:auto;
+            position: absolute;
+            top:15%;
+            left:28%;
+           
+        }
+        #head h1{
+            text-align: center;
+            line-height: 35px;
+            font-size:50px;
+            padding:10px;
+
+        }
+        #top{
+           width: 40%;
+            height:auto;
+            position: absolute;
+            top:32%;
+            left:28%; 
+           
+        }
+        #top h2{
+            line-height: 20px;
+            font-size: 28px;
+            padding-left:20px;
+            padding-right:20px;
+            text-align: center;
+            color: whitesmoke
+        }
+         #top h3{
+            line-height: 20px;
+            font-size: 28px;
+            padding-left:20px;
+            padding-right:20px;
+            text-align: center;
+            padding-top:10px;
+            color: whitesmoke;
+        }
+        #trainer{
+            width: 80%;
+            height:auto;
+            position: absolute;
+            top:40%;
+            left:10%; 
+            right:6%;
+        }
+        #trainer h2{
+            color: red;
+            font-size: 35px;
+
+        }
+        #trainer img{
+            width: auto;
+            padding-left:10px;
+            padding-top:10px;
+        }
+        #trainer h3{
+             color: whitesmoke;
+            font-size: 30px;
+            line-height: 40px;
+        }
+         #trainer p{
+             color:red;
+            font-size: 30px;
+        }
+        #trainer button{
+            background-color: red;
+            color:white;
+            border:2px solid white;
+            border-radius: 10px 10px 10px 10px;
+            font-size: 20px;
+            font-family: "Pliant", sans-serif;
+            padding-left:10px;
+            padding-right:10px;
+        }
+         #img1{
+            
+            transition:transform 1s linear 0s;
+        }
+        #img1:hover{
+            transform:rotate(360deg);
+            /*transform:rotateX(360deg)
+            transform:rotatey(360deg)*/
+          
+        }
+        #img2{
+            
+            transition:transform 1s linear 0s;
+        }
+        #img2:hover{
+            transform:rotate(360deg);
+            /*transform:rotateX(360deg)
+            transform:rotatey(360deg)*/
+          
+        }
+         #img3{
+            
+            transition:transform 1s linear 0s;
+        }
+        #img3:hover{
+            transform:rotate(360deg);
+            /*transform:rotateX(360deg)
+            transform:rotatey(360deg)*/
+          
+        }
+         #img4{
+            
+            transition:transform 1s linear 0s;
+        }
+        #img4:hover{
+            transform:rotate(360deg);
+            /*transform:rotateX(360deg)
+            transform:rotatey(360deg)*/
+          
+        }
+        #nav{
+            width:100%;
+            height:40px;
+            position: absolute;
+            bottom:0%;
+            top:100%;
+           
+        }
+        #nav h2{
+            font-size:10px;
+            line-height: 26px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            padding-top:12px;
+            color:white;
+        }
+            
+    </style>
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bitcount+Prop+Double+Ink:wght@100..900&family=Dancing+Script:wght@400..700&family=Estonia&family=Londrina+Solid:wght@100;300;400;900&family=Pliant:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap');
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+                <div class="c1">
+                    <h1 ><font color="red" face="algerian">FIGHT</font> <font color="white" face="vintage">CLUB</font></h1>
+                    <p>ELITE  COMBAT  ACADEMY</p>
+
+                </div>
+                <!--end of c1-->
+                <div class="c2">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="fighters.html">FIGHTERS</a></li>
+                        <li><a href="trainers.html">TRAINERS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+
+                </div>
+                <!--end of 2-->
+                <div class="c3">
+                    <button>JOIN NOW</button>
+
+                </div>
+        <!--end of c3-->
+    </div>
+        <div id="head">
+            <h1><font face="algerian" color="white">OUR FIGHTERS</font></h1>
+                <h1><font face="algerian" color="red">MEET THE WARRIORS</font></h1>
+        </div>
+        <div id="top">
+            <h2><font>The fighters who represent strength</font></h2>
+            <h3><font>discipline and courage.</font></h3>
+        </div>
+    
+       <div id="trainer">
+        
+        <table align="center" width="80%">
+        <tr>
+            <td align="center" width="25%"><img src="trainer1.jpg" width="100%" id="img1"/>
+                <h2>Chelsy weber</h2>
+                <p><h3><del>4999</del>1999/-</h3></p>
+                <button>Book now</button>
+            </td>
+            <td align="center" width="25%"><img src="trainer2.jpg" width="100%" id="img2"/>
+                <h2>Tom weley</h2>
+                <p><h3><del>3999</del> 1599/-</h3></p>
+                            <button>Book Now</button>            
+                        </td>
+            <td align="center" width="25%"><img src="trainer3.jpg" width="100%" id="img3"/>
+                <h2>Comyo jona</h2>
+                <p><h3><del>4399</del>3999/-</h3></p>
+                <button>Book Now</button>
+            </td>
+            <td align="center" width="25%"><img src="trainer4.jpg" width="100%" id="img4"/>
+                <h2>Bamuva sher</h2>
+                <p><h3><del>1999</del>1599/-</h3></p>
+                <button>Book Now</button>
+            </td>
+            
+
+        </tr>
+        </table>
+        </div>
+        <div id="nav">
+            <h2>ALL RIGHT RESERVED &COPY;PANKSONI</h2>
+        </div>
+
+    </div>
+    
+</body>
+</html>

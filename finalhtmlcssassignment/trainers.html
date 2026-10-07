@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pliant:ital,wght@0,100..900;1,100..900&display=swap');
+
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background-image: url('backgroundfighter.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-color:#000000;
+        }
+        #container{
+            width:100%;
+            height:auto;
+        }
+
+        /* ---------- top bar (same one used on every page) ---------- */
+        #main{
+            width:100%;
+            height:50px;
+            position:fixed;
+            background-color: rgba(0,0,0,0.85);
+            z-index:10;
+        }
+        #main .c1{
+            width:30%;
+            height:50px;
+            float:left;
+            line-height:50px;
+        }
+        h1{
+            text-align:center;
+            font-size:40px;
+            padding-left:6px;
+            font-family:"Pliant", sans-serif;
+        }
+        P{
+            COLOR:white;
+            text-align:center;
+            line-height:8px;
+            font-size:10px;
+            margin:auto;
+        }
+        #main .c2{
+            width:50%;
+            height:50px;
+            float:left;
+        }
+        .c2 ul li{
+            float:left;
+            margin:0px 20px;
+            line-height:50px;
+            font-size:18px;
+            font-family:"Pliant", sans-serif;
+            color:whitesmoke;
+            list-style:none;
+            text-align:center;
+        }
+        a{
+            text-decoration:none;
+            color:white;
+        }
+        .c2 ul li:hover a{
+            text-decoration:none;
+            border-bottom:3px solid whitesmoke;
+        }
+        .c2 ul li:hover{
+            background-color:#990000;
+        }
+        .c2 ul li.here a{
+            border-bottom:3px solid red;
+        }
+        #main .c3{
+            width:20%;
+            height:50px;
+            float:left;
+            position:absolute;
+            top:10px;
+            right:0px;
+        }
+        .c3 button{
+            background-color:black;
+            line-height:50px;
+            text-align:center;
+            padding:1px 2px;
+            font-family:"Pliant", sans-serif;
+            font-size:15px;
+            color:red;
+            font-weight:bold;
+            border-radius:10px;
+            border:2px solid #990000;
+            position:absolute;
+            top:3px;
+            right:100px;
+            cursor:pointer;
+        }
+
+        /* ---------- page heading ---------- */
+        #head{
+            width:60%;
+            margin:auto;
+            padding-top:110px;
+            padding-bottom:10px;
+        }
+        #head h1{
+            font-size:48px;
+            line-height:50px;
+        }
+        #head h4{
+            text-align:center;
+            color:whitesmoke;
+            font-size:17px;
+            padding-top:12px;
+            font-family:"Pliant", sans-serif;
+        }
+
+        /* ---------- filter buttons ---------- */
+        #pick{
+            width:80%;
+            margin:auto;
+            margin-top:25px;
+            text-align:center;
+        }
+        #pick h5{
+            color:grey;
+            font-size:13px;
+            padding-bottom:10px;
+            font-family:"Pliant", sans-serif;
+        }
+        .tag{
+            background-color:black;
+            color:white;
+            border:2px solid #990000;
+            border-radius:8px;
+            padding:8px 16px;
+            margin:4px;
+            font-size:15px;
+            font-weight:bold;
+            font-family:"Pliant", sans-serif;
+            cursor:pointer;
+        }
+        .tag:hover{
+            background-color:#990000;
+        }
+        .tag.on{
+            background-color:#990000;
+            border:2px solid white;
+        }
+        #count{
+            color:grey;
+            font-size:13px;
+            padding-top:12px;
+            font-family:"Pliant", sans-serif;
+        }
+
+        /* ---------- trainer cards ---------- */
+        #team{
+            width:88%;
+            margin:auto;
+            margin-top:20px;
+            overflow:hidden;
+        }
+        .card{
+            width:22%;
+            margin:1%;
+            float:left;
+            background-color: rgba(0,0,0,0.75);
+            border:2px solid #990000;
+            padding-bottom:15px;
+        }
+        .card img{
+            width:100%;
+            display:block;
+        }
+        .card h2{
+            color:white;
+            font-size:24px;
+            text-align:center;
+            padding-top:12px;
+            font-family:"Pliant", sans-serif;
+        }
+        .card h4{
+            color:red;
+            font-size:15px;
+            text-align:center;
+            padding-top:4px;
+            font-family:"Pliant", sans-serif;
+        }
+        .card h6{
+            color:grey;
+            font-size:12px;
+            text-align:center;
+            padding-top:8px;
+            font-weight:normal;
+        }
+        .card p{
+            color:whitesmoke;
+            font-size:13px;
+            line-height:19px;
+            text-align:justify;
+            padding:10px 14px 0px 14px;
+            text-transform:none;
+        }
+        .card button{
+            background-color:#990000;
+            color:white;
+            border:2px solid white;
+            border-radius:8px;
+            font-size:16px;
+            font-family:"Pliant", sans-serif;
+            padding:6px 18px;
+            margin-top:14px;
+            margin-left:14px;
+            cursor:pointer;
+        }
+        .card button:hover{
+            background-color:black;
+            color:red;
+        }
+        #empty{
+            width:100%;
+            color:grey;
+            text-align:center;
+            font-size:16px;
+            padding:30px 0px;
+            display:none;
+        }
+
+        /* ---------- weekly timetable ---------- */
+        #week{
+            width:88%;
+            margin:auto;
+            margin-top:40px;
+            background-color: rgba(0,0,0,0.8);
+            border:2px solid #990000;
+            padding-bottom:25px;
+        }
+        #week h1{
+            font-size:34px;
+            padding-top:20px;
+        }
+        #week h5{
+            color:grey;
+            text-align:center;
+            font-size:13px;
+            padding-top:8px;
+            font-weight:normal;
+        }
+        #days{
+            text-align:center;
+            padding-top:18px;
+            padding-bottom:10px;
+        }
+        .day{
+            background-color:black;
+            color:white;
+            border:2px solid grey;
+            border-radius:6px;
+            padding:7px 14px;
+            margin:3px;
+            font-size:14px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+        .day:hover{
+            border:2px solid red;
+        }
+        .day.on{
+            background-color:#990000;
+            border:2px solid white;
+        }
+        .sheet{
+            width:80%;
+            margin:auto;
+            display:none;
+        }
+        .sheet table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        .sheet th{
+            color:red;
+            font-size:15px;
+            text-align:left;
+            padding:10px;
+            border-bottom:2px solid #990000;
+            font-family:"Pliant", sans-serif;
+        }
+        .sheet td{
+            color:whitesmoke;
+            font-size:14px;
+            padding:10px;
+            border-bottom:1px solid #333333;
+        }
+        .sheet tr:hover td{
+            background-color: rgba(153,0,0,0.35);
+        }
+        .full{
+            color:grey;
+        }
+        .left{
+            color:#ff4d4d;
+            font-weight:bold;
+        }
+        #rest{
+            color:grey;
+            text-align:center;
+            padding:25px 0px;
+            font-size:15px;
+        }
+
+        /* ---------- footer ---------- */
+        #nav{
+            width:100%;
+            height:40px;
+            margin-top:40px;
+        }
+        #nav h2{
+            font-size:10px;
+            line-height:26px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align:center;
+            padding-top:12px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <div id="main">
+            <div class="c1">
+                <h1><font color="red" face="algerian">FIGHT</font> <font color="white" face="vintage">CLUB</font></h1>
+                <p>ELITE  COMBAT  ACADEMY</p>
+            </div>
+            <!--end of c1-->
+            <div class="c2">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="fighters.html">FIGHTERS</a></li>
+                    <li class="here"><a href="trainers.html">TRAINERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <!--end of c2-->
+            <div class="c3">
+                <button>JOIN NOW</button>
+            </div>
+            <!--end of c3-->
+        </div>
+        <!--end of main-->
+
+        <div id="head">
+            <h1><font face="algerian" color="white">OUR TRAINERS</font></h1>
+            <h1><font face="algerian" color="red">THE CORNER MEN</font></h1>
+            <h4>Every fighter on our wall was built by someone in this room.</h4>
+        </div>
+
+        <div id="pick">
+            <h5>Pick what you want to train in</h5>
+            <button class="tag on" id="t-all" onclick="pickStyle('all')">ALL</button>
+            <button class="tag" id="t-boxing" onclick="pickStyle('boxing')">BOXING</button>
+            <button class="tag" id="t-mma" onclick="pickStyle('mma')">MMA</button>
+            <button class="tag" id="t-strength" onclick="pickStyle('strength')">STRENGTH</button>
+            <button class="tag" id="t-fitness" onclick="pickStyle('fitness')">FITNESS</button>
+            <div id="count">Showing all 4 trainers</div>
+        </div>
+
+        <div id="team">
+
+            <div class="card" data-style="boxing">
+                <img src="trainer2.jpg" alt="Derek Malone"/>
+                <h2>DEREK MALONE</h2>
+                <h4>Boxing / Head Coach</h4>
+                <h6>9 years  |  Mon, Wed, Fri</h6>
+                <p>State level amateur before he started coaching. Works on footwork and counter punching before anything else. Takes the 5:30 AM boxing batch and Friday sparring.</p>
+                <button onclick="jumpToWeek('mon')">See his timings</button>
+            </div>
+
+            <div class="card" data-style="mma">
+                <img src="trainer4.jpg" alt="Marcus Hale"/>
+                <h2>MARCUS HALE</h2>
+                <h4>MMA / Ground Game</h4>
+                <h6>15 years  |  Tue, Thu, Sat</h6>
+                <p>The oldest coach in the academy and the loudest one. Wrestling, clinch work and submissions. If you want to fight on a card, you go through Marcus first.</p>
+                <button onclick="jumpToWeek('tue')">See his timings</button>
+            </div>
+
+            <div class="card" data-style="strength">
+                <img src="trainer1.jpg" alt="Randy Cole"/>
+                <h2>RANDY COLE</h2>
+                <h4>Strength &amp; Conditioning</h4>
+                <h6>12 years  |  Mon to Sat</h6>
+                <p>Runs the weight room and fight camp conditioning. Builds the programme around your weight class so you are not dying in the third round.</p>
+                <button onclick="jumpToWeek('mon')">See his timings</button>
+            </div>
+
+            <div class="card" data-style="fitness">
+                <img src="trainer3.jpg" alt="Alexa Reid"/>
+                <h2>ALEXA REID</h2>
+                <h4>Fitness / Gymnastics</h4>
+                <h6>7 years  |  Mon, Wed, Sat</h6>
+                <p>Mobility, gymnastics and the beginners batch. Most members who never touched a gym before start here and move up after three months.</p>
+                <button onclick="jumpToWeek('wed')">See her timings</button>
+            </div>
+
+            <div id="empty">No trainer for that style yet. Call us on +91 78796 35452 and we will arrange one.</div>
+
+        </div>
+        <!--end of team-->
+
+        <div id="week">
+            <h1><font face="algerian" color="white">WEEKLY </font><font face="algerian" color="red">TIMETABLE</font></h1>
+            <h5>Batch timings and how many slots are still open this week</h5>
+
+            <div id="days">
+                <button class="day on" id="d-mon" onclick="showDay('mon')">MON</button>
+                <button class="day" id="d-tue" onclick="showDay('tue')">TUE</button>
+                <button class="day" id="d-wed" onclick="showDay('wed')">WED</button>
+                <button class="day" id="d-thu" onclick="showDay('thu')">THU</button>
+                <button class="day" id="d-fri" onclick="showDay('fri')">FRI</button>
+                <button class="day" id="d-sat" onclick="showDay('sat')">SAT</button>
+                <button class="day" id="d-sun" onclick="showDay('sun')">SUN</button>
+            </div>
+
+            <div class="sheet" id="s-mon">
+                <table>
+                    <tr><th width="22%">TIME</th><th width="33%">CLASS</th><th width="27%">TRAINER</th><th width="18%">SLOTS</th></tr>
+                    <tr><td>5:30 - 7:00 AM</td><td>Boxing (advanced)</td><td>Derek Malone</td><td class="left">4 left</td></tr>
+                    <tr><td>7:00 - 8:30 AM</td><td>Beginners fitness</td><td>Alexa Reid</td><td class="left">9 left</td></tr>
+                    <tr><td>6:00 - 7:30 PM</td><td>Strength &amp; conditioning</td><td>Randy Cole</td><td class="full">Full</td></tr>
+                    <tr><td>7:30 - 9:00 PM</td><td>Boxing (beginners)</td><td>Derek Malone</td><td class="left">6 left</td></tr>
+                </table>
+            </div>
+
+            <div class="sheet" id="s-tue">
+                <table>
+                    <tr><th width="22%">TIME</th><th width="33%">CLASS</th><th width="27%">TRAINER</th><th width="18%">SLOTS</th></tr>
+                    <tr><td>5:30 - 7:00 AM</td><td>MMA fundamentals</td><td>Marcus Hale</td><td class="left">3 left</td></tr>
+                    <tr><td>7:00 - 8:30 AM</td><td>Strength &amp; conditioning</td><td>Randy Cole</td><td class="left">7 left</td></tr>
+                    <tr><td>6:00 - 7:30 PM</td><td>Wrestling &amp; clinch</td><td>Marcus Hale</td><td class="left">5 left</td></tr>
+                    <tr><td>7:30 - 9:00 PM</td><td>Open mat</td><td>Free session</td><td class="left">Walk in</td></tr>
+                </table>
+            </div>
+
+            <div class="sheet" id="s-wed">
+                <table>
+                    <tr><th width="22%">TIME</th><th width="33%">CLASS</th><th width="27%">TRAINER</th><th width="18%">SLOTS</th></tr>
+                    <tr><td>5:30 - 7:00 AM</td><td>Boxing (advanced)</td><td>Derek Malone</td><td class="left">2 left</td></tr>
+                    <tr><td>7:00 - 8:30 AM</td><td>Gymnastics &amp; mobility</td><td>Alexa Reid</td><td class="left">8 left</td></tr>
+                    <tr><td>6:00 - 7:30 PM</td><td>Strength &amp; conditioning</td><td>Randy Cole</td><td class="full">Full</td></tr>
+                    <tr><td>7:30 - 9:00 PM</td><td>Pad work</td><td>Derek Malone</td><td class="left">5 left</td></tr>
+                </table>
+            </div>
+
+            <div class="sheet" id="s-thu">
+                <table>
+                    <tr><th width="22%">TIME</th><th width="33%">CLASS</th><th width="27%">TRAINER</th><th width="18%">SLOTS</th></tr>
+                    <tr><td>5:30 - 7:00 AM</td><td>MMA fundamentals</td><td>Marcus Hale</td><td class="left">4 left</td></tr>
+                    <tr><td>7:00 - 8:30 AM</td><td>Strength &amp; conditioning</td><td>Randy Cole</td><td class="left">6 left</td></tr>
+                    <tr><td>6:00 - 7:30 PM</td><td>Submissions</td><td>Marcus Hale</td><td class="left">3 left</td></tr>
+                    <tr><td>7:30 - 9:00 PM</td><td>Beginners fitness</td><td>Alexa Reid</td><td class="left">10 left</td></tr>
+                </table>
+            </div>
+
+            <div class="sheet" id="s-fri">
+                <table>
+                    <tr><th width="22%">TIME</th><th width="33%">CLASS</th><th width="27%">TRAINER</th><th width="18%">SLOTS</th></tr>
+                    <tr><td>5:30 - 7:00 AM</td><td>Boxing (advanced)</td><td>Derek Malone</td><td class="left">3 left</td></tr>
+                    <tr><td>7:00 - 8:30 AM</td><td>Strength &amp; conditioning</td><td>Randy Cole</td><td class="left">5 left</td></tr>
+                    <tr><td>6:00 - 8:00 PM</td><td>Sparring night</td><td>Derek + Marcus</td><td class="full">Full</td></tr>
+                </table>
+            </div>
+
+            <div class="sheet" id="s-sat">
+                <table>
+                    <tr><th width="22%">TIME</th><th width="33%">CLASS</th><th width="27%">TRAINER</th><th width="18%">SLOTS</th></tr>
+                    <tr><td>6:00 - 8:00 AM</td><td>Fight camp circuit</td><td>Randy Cole</td><td class="left">6 left</td></tr>
+                    <tr><td>8:00 - 9:30 AM</td><td>Gymnastics &amp; mobility</td><td>Alexa Reid</td><td class="left">7 left</td></tr>
+                    <tr><td>5:00 - 7:00 PM</td><td>MMA sparring</td><td>Marcus Hale</td><td class="left">4 left</td></tr>
+                    <tr><td>7:00 - 8:00 PM</td><td>Trial class (free)</td><td>All trainers</td><td class="left">Walk in</td></tr>
+                </table>
+            </div>
+
+            <div class="sheet" id="s-sun">
+                <div id="rest">Academy closed. Recovery day, stretch and eat properly.</div>
+            </div>
+
+        </div>
+        <!--end of week-->
+
+        <div id="nav">
+            <h2>ALL RIGHT RESERVED &COPY;PANKSONI</h2>
+        </div>
+
+    </div>
+    <!--end of container-->
+
+    <script>
+        /* filter the trainer cards by training style */
+        function pickStyle(style){
+            var cards = document.getElementsByClassName("card");
+            var shown = 0;
+
+            for(var i = 0; i < cards.length; i++){
+                if(style == "all" || cards[i].getAttribute("data-style") == style){
+                    cards[i].style.display = "block";
+                    shown = shown + 1;
+                }
+                else{
+                    cards[i].style.display = "none";
+                }
+            }
+
+            /* message when nothing matches */
+            if(shown == 0){
+                document.getElementById("empty").style.display = "block";
+            }
+            else{
+                document.getElementById("empty").style.display = "none";
+            }
+
+            /* counter line */
+            if(style == "all"){
+                document.getElementById("count").innerHTML = "Showing all " + shown + " trainers";
+            }
+            else if(shown == 1){
+                document.getElementById("count").innerHTML = "1 trainer takes " + style;
+            }
+            else{
+                document.getElementById("count").innerHTML = shown + " trainers take " + style;
+            }
+
+            /* highlight the button that was clicked */
+            var tags = document.getElementsByClassName("tag");
+            for(var j = 0; j < tags.length; j++){
+                tags[j].className = "tag";
+            }
+            document.getElementById("t-" + style).className = "tag on";
+        }
+
+        /* open one day of the timetable */
+        function showDay(day){
+            var sheets = document.getElementsByClassName("sheet");
+            for(var i = 0; i < sheets.length; i++){
+                sheets[i].style.display = "none";
+            }
+            document.getElementById("s-" + day).style.display = "block";
+
+            var btns = document.getElementsByClassName("day");
+            for(var j = 0; j < btns.length; j++){
+                btns[j].className = "day";
+            }
+            document.getElementById("d-" + day).className = "day on";
+        }
+
+        /* card button - open that day and scroll down to it */
+        function jumpToWeek(day){
+            showDay(day);
+            document.getElementById("week").scrollIntoView();
+        }
+
+        /* open today's timetable when the page loads */
+        window.onload = function(){
+            var names = ["sun","mon","tue","wed","thu","fri","sat"];
+            showDay(names[new Date().getDay()]);
+        }
+    </script>
+</body>
+</html>

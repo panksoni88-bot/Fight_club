@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #container
+        {
+            width:100%;
+            height:auto;
+        }
+        body{
+            background-image: url('aboutbackground.jpeg');
+           background-size: cover;
+        }
+        #container{
+            width:100%;
+            height:auto;
+           
+        }
+        #top{
+         width:100%;
+         height:50px;
+         position:fixed;
+         background-color: rgba(0,0,0,0.85);
+         z-index:10;
+         
+         
+        }
+        #top .c1{
+            width:30%;
+            height:50px;
+            float:left;
+            line-height: 50px;
+           
+
+        }
+        h1{
+            text-align: center;
+            font-size:40px;
+            padding-left: 6px;
+            font-family: "Pliant", sans-serif;
+        }
+        P{
+            COLOR:white;
+            text-align: center;
+            line-height:8px;
+            font-size:10px;
+            margin:auto;
+
+        }
+        #top .c2{
+            width:50%;
+            height:50px;
+            float:left;
+            
+        }
+        .c2 ul li{
+            float:left;
+            margin:0px 20px;
+            line-height:50px;
+            font-size: 18px;
+            font-family: "Pliant", sans-serif;
+            padding:auto;
+            color:whitesmoke;
+            list-style: none;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+
+        }
+        .c2 ul li:hover a{
+            text-decoration:none;
+            border-bottom: 3px solid whitesmoke;
+          
+         
+        }
+        .c2 ul li:hover{
+
+           background-color:#990000;
+        }
+        
+        #top .c3{
+            width:20%;
+            height:50px;
+            float:left;
+            position:absolute;
+            top:10px;
+            right:0px;
+            
+        }
+        .c3 button{
+            background-color: black;
+            line-height:50px;
+            text-align:center;
+            margin-top: auto;
+            padding:1px 2px;
+            font-family: "Pliant", sans-serif;
+            font-size: 15px;
+            color:red;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid #990000;
+            position: absolute;
+            top:3px;
+            right:100px;
+        }
+        #about{
+            width:20%;
+            height:40px;
+            
+            position: absolute;
+            top:10%;
+            left:6%;
+        }
+        #about h1{
+            font-size: 20px;
+            line-height:20px;
+            padding:20px 10px;
+            text-align: center;
+            color:red;
+
+        }
+        #main{
+            width:40%;
+            height:150px;
+           
+            position:absolute;
+            top:17%;
+            left:6%;
+        }
+       #main h1{
+        line-height:60px;
+        font-size: 70px;
+        padding-left:35px;
+        padding-top:3px;
+       }
+       #down{
+            width:40%;
+            height:20px;
+           position:absolute;
+            top:36%;
+            left:6%;
+       }
+       #down h1{
+        font-size:17px;
+        line-height:20px;
+        padding-left:60px;
+        padding-right:50px;
+
+       }
+       #content{
+        width:40%;
+        height:200px;
+        
+        position:absolute;
+        top:40%;
+        left:6%;
+       }
+       #content p{
+        line-height: 20px;
+        font-size: 17px;
+        padding-left:35px;
+        padding-right: 10px;
+        padding-top: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: justify;
+       }
+       #discover{
+        width:17%;
+        height:37px;
+        position:absolute;
+        top:68%;
+        left:8%;
+        border:2px solid red;
+        background-color: black;
+        border-radius: 10px 10px 10px 10px;
+
+       }
+       #discover h1{
+        line-height:20px;
+        font-size: 15px;
+        padding-left:28px;
+        padding-right:10px;
+        text-align: center;
+        padding-top:8px;
+        color:white;
+       }
+        #low{
+            width:44%;
+            height:80px;
+            position:absolute;
+            top:80%;
+            left:8%;
+            background-color: rgba(0, 0, 0, 0.7);
+
+        }
+        #exp{
+            width:8%;
+            height:15%;
+            position:absolute;
+            top:76%;
+            left:8%;
+            border:2px solid red;
+            background-color: black;
+            border-radius: 10px 10px 10px 10px;
+
+        }
+        #exp h1{
+            color:grey;
+            font-size:30px;
+            padding-left:20px;
+            padding-right:10px;
+            line-height: 20px;
+            padding-top:10px;
+            
+    
+        }
+         #exp h5{
+            color:grey;
+            font-size:12px;
+            padding-left:20px;
+            padding-right:0px;
+            line-height: 1px;
+            padding-top:15px;
+            
+    
+        }
+        #nav{
+            width:100%;
+            height:40px;
+            position: absolute;
+            top:100%;
+            bottom:0%;
+           
+        }
+        #nav h2{
+            font-size:10px;
+            line-height: 26px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            padding-top:12px;
+            color:white;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+      <div id="top">
+                <div class="c1">
+                    <h1 ><font color="red" face="algerian">FIGHT</font> <font color="white" face="vintage">CLUB</font></h1>
+                    <p>ELITE  COMBAT  ACADEMY</p>
+
+                </div>
+                <!--end of c1-->
+                <div class="c2">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="fighters.html">FIGHTERS</a></li>
+                        <li><a href="trainers.html">TRAINERS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+
+                </div>
+                <!--end of 2-->
+                <div class="c3">
+                    <button>JOIN NOW</button>
+
+                </div>
+        <!--end of c3-->
+      </div>
+        <div id="about">
+            <h1><font face="algerian"> -----About Fight Club </font></h1>
+        </div>
+        <div id="main">
+            <h1><font face="algerian" color="white">MORE THAN </font></h1>
+            <h1><font face="algerian" color="red">JUST A FIGHT. </font></h1>
+        </div>
+        <div id="down">
+            <h1><font face="aerial" color="grey">DISCIPLINE / STRENGTH / BROTHERHOOD </font></h1>
+        </div>
+        <div id="content">
+            <p><font color="white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis deleniti velit,
+                 neque nostrum temporibus hic, Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptate numquam laborum accusantium nesciunt reprehenderit quis dolore eius et maxime.
+                  Voluptatem ipsa, reprehenderit nesciunt assumenda sed itaque maxime totam et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quidem tempora odio similique aut reiciendis modi atque cupiditate quisquam, 
+                  ex debitis nemo cum quis sed labore molestiae architecto voluptate error.
+                facere sunt illum sit aperiam minus optio perspiciatis itaque amet vero maxime repudiandae et reprehenderit.</font></p>
+        </div>
+        <div id="discover">
+            <h1><font>DISCOVER OUR STORY --!</font></h1>
+        </div>
+        <div id="exp">
+            <h1><font face="algerian">10+</font></h1>
+            <h1><font face="algerian">Years</font></h1>
+            <h5>OF BUILDING</h5>
+            <h5>FIGHTERS</h5>
+        </div>
+        <div id="nav">
+            <h2>ALL RIGHT RESERVED &COPY;PANKSONI</h2>
+        </div>
+        
+
+    </div>
+</body>
+</html>

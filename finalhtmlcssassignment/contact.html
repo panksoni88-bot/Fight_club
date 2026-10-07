@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #container{
+            width:100%;
+            height:auto;
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background-image: url('backgroundfighter.png');
+            background-size: cover;
+        }
+     
+         #main{
+         width:100%;
+         height:50px;
+         position:fixed;
+         background-color: rgba(0,0,0,0.85);
+         z-index:10;
+         
+         
+        }
+        #main .c1{
+            width:30%;
+            height:50px;
+            float:left;
+            line-height: 50px;
+        }
+        h1{
+            text-align: center;
+            font-size:40px;
+            padding-left: 6px;
+            font-family: "Pliant", sans-serif;
+        }
+        P{
+            COLOR:white;
+            text-align: center;
+            line-height:8px;
+            font-size:10px;
+            margin:auto;
+
+        }
+        #main .c2{
+            width:50%;
+            height:50px;
+            float:left;
+            
+        }
+        .c2 ul li{
+            float:left;
+            margin:0px 20px;
+            line-height:50px;
+            font-size: 18px;
+            font-family: "Pliant", sans-serif;
+            padding:auto;
+            color:whitesmoke;
+            list-style: none;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+
+        }
+        .c2 ul li:hover a{
+            text-decoration:none;
+            border-bottom: 3px solid whitesmoke;
+          
+         
+        }
+        .c2 ul li:hover{
+
+           background-color:#990000;
+        }
+        
+        #main .c3{
+            width:20%;
+            height:50px;
+            float:left;
+            position:absolute;
+            top:10px;
+            right:0px;
+            
+        }
+        .c3 button{
+            background-color: black;
+            line-height:50px;
+            text-align:center;
+            margin-top: auto;
+            padding:1px 2px;
+            font-family: "Pliant", sans-serif;
+            font-size: 15px;
+            color:red;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid #990000;
+            position: absolute;
+            top:3px;
+            right:100px;
+        }   
+        #inner{
+            width:80%;
+            height:200px;
+            position: absolute;
+            top:150px;
+            left:50px;
+        
+
+        }
+        .box{
+            width:40%;
+            height:150px;
+
+        }
+        .box h1{
+            text-align: justify;
+            font-size: 50px;
+            padding-left: 20px;
+            line-height: 40px;
+            padding-right: 20px;
+        }
+        .box h4{
+            text-align: justify;
+            font-size: 20px;
+            padding-left: 25px;
+            line-height: 40px;
+            color: aliceblue;
+        }
+        .box p{
+            text-align: justify;
+            font-size: 15px;
+            padding-left:25px;
+            line-height: 25px;;
+        }
+        .btn{
+            margin-left: 30px;
+            margin-top:40px;
+            width:150px;
+            height:45px;
+            background-color: #990000;
+            color:white;
+            border: none;
+            font-weight: bold;
+        }
+        #contact{
+            width:100%;
+            height:400px;
+            position: relative;
+            top:380px;
+            background-color: rgb(0,0,0,0.8);
+        }
+         #contact .inside1{
+            width: 50%;
+            height: 400px;
+            margin:auto;
+            float:left;
+           
+         }
+        #contact .inside2{
+            width: 50%;
+            height: 400px;
+            margin:auto;
+            float:left;
+            
+         }
+         .inside1 .box1{
+            width:80%;
+            height:350px;
+            margin-top:25px;
+            margin-left: 65px;
+            float: left;
+         }
+        .inside2 .box2{
+            width:80%;
+            height:350px;
+            margin-top:25px;
+            margin-left: 20px;
+            float:left;
+            border: 3px solid red;
+         }
+         .box1 h1{
+            text-align: justify;
+            font-size:30px;
+
+         }
+         .box1 h4{
+            text-align: justify;
+            color:red;
+            padding-left: 7px;
+            line-height: 30px;
+
+         }
+         .box1 ul{
+            list-style: none;
+            padding-left: 20px;;
+            line-height: 65px;
+            font-size: 30px;
+         }
+        .box1 .b1{
+            width: 150px;
+            height: 50px;
+           
+            position:absolute;
+            left:130px;
+            bottom:260px;
+        }
+        .b1 h6{
+            text-align:justify;
+            font-size: 15px;
+            color: white;
+            padding-left: 0px;
+            padding-top: 15px;
+            margin-right:20px;
+
+        }
+         .b1 p{
+            text-align:justify;
+            font-size: 10px;
+            color: white;
+            line-height: 14px;
+
+        }
+          .box1 .b2{
+            width: 150px;
+            height: 50px;
+           position:absolute;
+            left:130px;
+            bottom:180px;
+            
+        }
+         .b2 h6{
+            text-align:justify;
+            font-size: 15px;
+            color: white;
+            padding-left: 0px;
+            padding-top: 0px;
+            margin-right:20px;
+
+        }
+         .b2 p{
+            text-align:justify;
+            font-size: 10px;
+            color: white;
+            line-height: 14px;
+
+        }
+        .box1 h5{
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+          .box1 .b3{
+            width: 150px;
+            height: 50px;
+           position:absolute;
+            left:130px;
+            bottom:115px;
+            
+            
+        }
+           .b3 h6{
+            text-align:justify;
+            font-size: 15px;
+            color: white;
+            padding-left: 0px;
+            padding-top: 0px;
+            margin-right:20px;
+
+        }
+           .b3 p{
+            text-align:justify;
+            font-size: 10px;
+            color: white;
+            line-height: 14px;
+
+        }
+           .box1 .b4{
+            width: 150px;
+            height: 50px;
+           position:absolute;
+            left:130px;
+            bottom:50px;
+       
+        }
+          .b4 h6{
+            text-align:justify;
+            font-size: 10px;
+            color: white;
+            padding-left: 0px;
+            padding-top: 0px;
+            margin-right:20px;
+
+        }
+        .b4 p{
+            text-align:justify;
+            font-size: 10px;
+            color: white;
+            line-height: 14px;
+
+        }
+        .box2 h1{
+            color: #990000;
+            text-align: justify;
+            font-size: 30px;
+        }
+        #username{
+            width:547px;
+            height:35px;
+            padding: auto;
+            padding-left: 10px;
+            text-align: justify;
+            font-weight: bold;
+            border:2px solid white;
+        }
+        #email{
+            width:547px;
+            height:35px;
+            padding: auto;
+            padding-left: 10px;
+            text-align: justify;
+            font-weight: bold;
+            border:2px solid white;
+        }
+        #phone{
+            width:547px;
+            height:35px;
+            padding: auto;
+            padding-left: 10px;
+            text-align: justify;
+            font-weight: bold;
+            border:2px solid white;
+        }    
+         #training{
+            width:560px;
+            height:35px;
+            padding: auto;
+            padding-left: 10px;
+            text-align: justify;
+            font-weight: bold;
+            border:2px solid white;
+        }
+        #usermessage{
+            width:400px;
+            height:50px;
+            padding: auto;
+            padding-left: 10px;
+            text-align: justify;
+            font-weight: bold;
+            border:2px solid white;
+        }
+            
+        #btn_submit{
+            width:550px;
+            background-color: #990000;
+            color:white;
+            height:40px;
+            padding:auto;
+            font-size: 25px;
+        }
+        #map{
+            width:100%;
+            height: 400px;
+            background-color: rgba(0,0,0,0.9);
+        }
+        #map .box1{
+            width:50%;
+            float:left;
+            height:400px;
+
+        }
+        #map .box2{
+            width:50%;
+            float:left;
+            height:400px;
+        }
+            
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+                <div class="c1">
+                    <h1 ><font color="red" face="algerian">FIGHT</font> <font color="white" face="vintage">CLUB</font></h1>
+                    <p>ELITE  COMBAT  ACADEMY</p>
+
+                </div>
+                <!--end of c1-->
+                <div class="c2">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="fighters.html">FIGHTERS</a></li>
+                        <li><a href="trainers.html">TRAINERS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+
+                </div>
+                <!--end of 2-->
+                <div class="c3">
+                    <button>JOIN NOW</button>
+
+                </div>
+        <!--end of c3-->
+       </div>
+       <div id="inner">
+        <div class="box">
+            <h1><font color="white" face="algerian">GET IN</font><font color="RED" face="algerian"> TOUCH</font></h1>
+            <h4>Ready To Step In To The Fight?</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptatum ipsum, maxim laboriosam quam praesentium earum incidunt similique?</p>
+            <button class="btn">JOIN THE CLUB--></button>
+        </div>
+
+       </div><!--end of inner-->
+       <div id="contact">
+        <div class="inside1">
+            <div class="box1">
+               <h4>CONTACT US ------</h4>
+               <h1><font color="white" face="algerian">GET IN TOUCH</font></h1> 
+               <ul>
+                <li><a href=""><i class="fa fa-map-marker"></i></a></li>
+                <li><a href=""><i class="fa fa-phone" ></i></a></li>
+                <li><a href=""><i class="fa fa-envelope"></i></a></li>
+                <li><a href=""><i class="fa fa-clock-o" ></i></a></li>
+               </ul>
+
+               <div class="b1">
+                <h6>VISIT US</h6>
+                <p>Elite Academy Bhopal</p>
+                <p>Madhya Pradesh</p>
+               </div>
+               <div class="b2">
+                <h6>CALL US</h6>
+                <p>+917879635452</p>
+               
+               </div>
+               <div class="b3">
+                <h6>EMAIL US</h6>
+                <p>eliteacademy52@gmail.com</p>
+                
+               </div>
+               <div class="b4">
+                <h6>TRAINING HOURS</h6>
+                <p>Mon-Sat</p>
+                <p>5:30 AM To 10:00 PM</p>
+               </div>
+               <hr width="80%" color="white"/>
+                <h5><font color="white">FOLLOW US ON INSTAGRAM , FACEBOOK : ELITE ACADEMY BHOPAL</font></h5>
+             
+            </div>
+             
+            
+
+        </div>
+        <div class="inside2">
+            <div class="box2">
+                <h1><font color="red" face="algerian">CONTACT THE CLUB ----</font></h1>
+                <table align="center" width="80%" height="280px" cellpadding="100px" cellspacing="10px" >
+                    <form id="form">
+                        <tr>
+                            <td><input type="text" id="username" name="user_name" placeholder="Name"></td>
+                        </tr>
+                        <tr>
+                             <td><input type="text" id="email" name="user_name" placeholder="Email"></td>
+                        </tr>
+                        <tr>
+                              <td><input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"></td>
+                        </tr>
+                        <tr>
+                            <td><select name="GYM" id="training">
+                                <option value="select">Select Training</option>
+                                <option value="Boxing">Boxing</option>
+                                <option value="gym">GYM</option>
+                                <option value="gymnastics">Gymnastics</option>
+                                <option value="exercise">Exercise</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><textarea id="usermessage" name="message" placeholder="Type your Queries Messages"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="submit" id="btn_submit">Submit ---></button>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+                
+            </div>
+        </div>
+       </div>
+      
+     
+    </div><!--end of container-->
+</body>
+</html>
